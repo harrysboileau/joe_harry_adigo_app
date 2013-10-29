@@ -16,6 +16,14 @@ describe Task do
     it "title should be set" do
       task.title.should eq(title)
     end
+
+    it "status should default to incomplete" do
+      task.status.should eq(:incomplete)
+    end
+
+    it "created_at should be initialized" do
+      task.created_at.should be_a(Time)
+    end
   end
 end
 
