@@ -1,7 +1,17 @@
 require 'rspec'
 require_relative 'tdd'
 
+describe TodoList do
+  let(:title) { "test list title"}
+  let(:list) { TodoList.new(title) }
 
+  describe "initialize" do
+    it "should have a title" do
+      list.title.should eq(title)
+    end
+  end
+
+end
 
 describe Task do
   let(:title) { "Test title" }
