@@ -1,5 +1,6 @@
 class Task
-  attr_reader :title, :description, :status, :created_at
+  attr_reader :title, :description, :created_at
+  attr_accessor :complete
   def initialize(title, description)
     @title = title
     @description = description
@@ -8,9 +9,16 @@ class Task
   end
 
   def status
-    unless @complete
+    if @complete == true
+      :complete
+    else
       return :incomplete
     end
+  end
+
+  def mark_as_complete!
+    @complete = true
+    self
   end
 end
 
