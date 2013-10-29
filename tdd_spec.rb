@@ -14,7 +14,7 @@ describe Task do
     end
 
     it "title should be set" do
-      task.title.should eq.(title)
+      task.title.should eq(title)
     end
   end
 end
