@@ -25,6 +25,12 @@ describe Task do
       task.created_at.should be_a(Time)
     end
   end
+
+  describe "mark_as_complete!" do
+    it "should change the status to complete" do
+      task.mark_as_complete!.status.should eq(:complete)
+    end
+  end
 end
 
 
