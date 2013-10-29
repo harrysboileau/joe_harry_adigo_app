@@ -31,6 +31,21 @@ describe Task do
       task.mark_as_complete!.status.should eq(:complete)
     end
   end
+
+  describe "mark_as_incomplete!" do
+    it "should change the status to incomplete" do
+      task.mark_as_incomplete!.status.should eq(:incomplete)
+    end
+  end
+
+  describe "complete?" do
+    it "should return a boolean indicating whether task is complete" do
+      task.complete?.should eq(false)
+      task.mark_as_complete!.complete?.should eq(true)
+    end
+
+  end
+
 end
 
 
